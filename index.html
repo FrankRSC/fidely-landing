@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidely - La revolución de la lealtad digital</title>
+    <meta name="description" content="Fideliza a tus clientes y haz crecer tu negocio con Fidely. La plataforma definitiva de recompensas, puntos y descuentos en una sola billetera digital.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="logo-icon" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="var(--accent-color)"/>
+                    <path d="M9 12l2 2 4-4" stroke="#1C2E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Fidely</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#beneficios">Beneficios</a>
+                <a href="#como-funciona">Cómo Funciona</a>
+                <a href="#caracteristicas">Características</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="#" class="btn btn-secondary nav-btn">Iniciar Sesión</a>
+                <a href="#" class="btn btn-primary nav-btn">Empezar</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="inicio">
+            <div class="container hero-container">
+                <div class="hero-content fade-in-up">
+                    <span class="badge">🌟 La revolución de la lealtad digital</span>
+                    <h1>Fideliza a tus clientes y <span class="text-gradient">haz crecer tu negocio</span>. Todo desde su celular.</h1>
+                    <h2>Dile adiós a las tarjetas de cartón. Fidely es la plataforma definitiva que conecta negocios y clientes mediante recompensas, puntos y descuentos en una sola billetera digital.</h2>
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary btn-large glow-effect">Crear mi Programa de Recompensas</a>
+                        <a href="#" class="btn btn-outline btn-large">Descargar App para Clientes</a>
+                    </div>
+                </div>
+                <!-- Mockup visual representation -->
+                <div class="hero-visual fade-in-up delay-1">
+                    <div class="phone-mockup business-phone">
+                        <div class="phone-screen">
+                            <div class="phone-header">Modo Negocio</div>
+                            <div class="qr-scanner">
+                                <div class="scan-line"></div>
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+                            </div>
+                            <div class="scan-text">Escaneando cliente...</div>
+                        </div>
+                    </div>
+                    <div class="phone-mockup client-phone glass-panel">
+                        <div class="phone-screen">
+                            <div class="phone-header">Mi Billetera</div>
+                            <div class="loyalty-card">
+                                <span class="card-title">Cafetería Central</span>
+                                <div class="points">★ 4/5 Visitas</div>
+                            </div>
+                            <div class="loyalty-card card-2">
+                                <span class="card-title">Barbería VIP</span>
+                                <div class="points">★ 150 Pts</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-background-glow"></div>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section class="value-prop section-padding" id="beneficios">
+            <div class="container">
+                <h2 class="section-title text-center fade-in-up">Dos públicos, <span class="text-accent">una plataforma</span></h2>
+                <div class="split-layout">
+                    <!-- Business Side -->
+                    <div class="split-card business-card glass-panel fade-in-up">
+                        <div class="card-header">
+                            <span class="icon-wrapper bg-primary">🏪</span>
+                            <h3>Para Dueños de Negocios</h3>
+                        </div>
+                        <ul class="benefit-list">
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Crea Reglas a tu Medida:</strong> Diseña programas de recompensa basados en visitas, acumulación de puntos o porcentajes de descuento.
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Escáner Inteligente "Todo en uno":</strong> Emite puntos o canjea recompensas simplemente escaneando el código QR de tus clientes usando la cámara de tu teléfono.
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Datos y Analíticas (Dashboard):</strong> Monitorea tus visitas totales, tarjetas activas y puntos emitidos en tiempo real.
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Gestión de Equipo:</strong> Añade a tus empleados para que ellos también puedan operar el escáner y otorgar puntos de forma segura.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Client Side -->
+                    <div class="split-card client-card glass-panel fade-in-up delay-1">
+                        <div class="card-header">
+                            <span class="icon-wrapper bg-accent">📱</span>
+                            <h3>Para Clientes</h3>
+                        </div>
+                        <ul class="benefit-list">
+                            <li>
+                                <svg class="check-icon accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Adiós al plástico y al papel:</strong> Todas tus tarjetas de lealtad almacenadas en "Mi Fidely". Siempre contigo en tu bolsillo.
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="check-icon accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Tu propio código QR:</strong> Solo muestra tu código personal ("Mi QR") al cajero y tus puntos se cargarán al instante.
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="check-icon accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Sigue tu Progreso:</strong> Revisa tu balance, historial de transacciones y entérate de cuánto falta para desbloquear tu próxima recompensa.
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="check-icon accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                <div>
+                                    <strong>Descubre Nuevos Lugares:</strong> Un explorador integrado para encontrar locales cercanos y agregar nuevas tarjetas.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works Section -->
+        <section class="how-it-works section-padding" id="como-funciona">
+            <div class="container">
+                <h2 class="section-title text-center fade-in-up">¿Cómo Funciona para Negocios?</h2>
+                <div class="steps-container">
+                    <div class="step-card glass-panel fade-in-up">
+                        <div class="step-number">1</div>
+                        <h3>Configura tu Perfil</h3>
+                        <p>Añade el nombre de tu negocio, tipo de rubro y crea tu primer Programa de Recompensa (ej. "Un café gratis cada 5 visitas").</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-card glass-panel fade-in-up delay-1">
+                        <div class="step-number">2</div>
+                        <h3>Escanea a tus Clientes</h3>
+                        <p>Cuando el cliente paga, abre el Escáner Fidely desde la app y lee su código QR personal de forma segura y rápida.</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-card glass-panel fade-in-up delay-2">
+                        <div class="step-number">3</div>
+                        <h3>Recompensa y Fideliza</h3>
+                        <p>El cliente recibe notificaciones en tiempo real, suma sus visitas y vuelve a tu tienda felizmente a canjear sus premios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features section-padding" id="caracteristicas">
+            <div class="container">
+                <h2 class="section-title text-center fade-in-up">Características Destacadas</h2>
+                <div class="features-grid">
+                    <div class="feature-box glass-panel hover-lift fade-in-up">
+                        <div class="feature-icon bg-primary-light">💳</div>
+                        <h4>Programas Múltiples</h4>
+                        <p>¿Visitas, puntos por dinero gastado o tarjetas de descuento? Tú eliges lo que mejor se adapte a tu rubro.</p>
+                    </div>
+                    <div class="feature-box glass-panel hover-lift fade-in-up delay-1">
+                        <div class="feature-icon bg-accent-light">🎨</div>
+                        <h4>Personalización</h4>
+                        <p>Elige los colores de las tarjetas de tu negocio para que coincidan perfectamente con la identidad de tu marca.</p>
+                    </div>
+                    <div class="feature-box glass-panel hover-lift fade-in-up delay-2">
+                        <div class="feature-icon bg-secondary-light">🔒</div>
+                        <h4>Roles de Usuario</h4>
+                        <p>Accesos seguros y segmentados por Dueño, Empleado o Cliente, para un control absoluto de la plataforma.</p>
+                    </div>
+                    <div class="feature-box glass-panel hover-lift fade-in-up">
+                        <div class="feature-icon bg-dark-light">🌍</div>
+                        <h4>Multi-idioma y Tema Oscuro</h4>
+                        <p>Interfaz amigable, moderna y adaptable a las preferencias de cada usuario. Diseñada para un uso cómodo de día o de noche.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials section-padding">
+            <div class="container">
+                <h2 class="section-title text-center fade-in-up">Lo que dicen de Fidely</h2>
+                <div class="testimonial-slider fade-in-up">
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars">★★★★★</div>
+                        <p class="quote">"Desde que usamos Fidely en la cafetería, hemos visto un aumento del 30% en la frecuencia de visita de nuestros clientes habituales. ¡El escáner es rapidísimo!"</p>
+                        <div class="author">
+                            <div class="author-avatar bg-primary">M</div>
+                            <div class="author-info">
+                                <strong>María</strong>
+                                <span>Dueña de Cafetería</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-panel delay-1">
+                        <div class="stars text-accent">★★★★★</div>
+                        <p class="quote">"Me encanta. Antes perdía siempre mis tarjetas de sellos. Ahora solo abro mi app, muestro el QR y listo. Súper práctico e innovador."</p>
+                        <div class="author">
+                            <div class="author-avatar bg-accent">C</div>
+                            <div class="author-info">
+                                <strong>Carlos</strong>
+                                <span>Cliente Frecuente</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section section-padding" id="faq">
+            <div class="container faq-container fade-in-up">
+                <h2 class="section-title text-center">Preguntas Frecuentes</h2>
+                <div class="accordion">
+                    <div class="accordion-item glass-panel">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="accordion-title">¿Qué necesito para empezar como negocio?</span>
+                            <span class="accordion-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Solo un teléfono inteligente. Te registras, creas tu programa y usas la propia cámara del celular para escanear a tus clientes. No requieres hardware adicional ni tablets costosas.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass-panel">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="accordion-title">¿Es gratis para los clientes?</span>
+                            <span class="accordion-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Sí, la aplicación es 100% gratuita para clientes y explorar lugares nuevos no cuesta nada. Simplemente descárgala y empieza a acumular puntos.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass-panel">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="accordion-title">¿Puedo tener más de un programa de recompensa en mi negocio?</span>
+                            <span class="accordion-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Sí. Puedes tener varios programas activos (ej. tarjetas VIP por acumulación de dinero gastado y tarjetas regulares por número de visitas).</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass-panel">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="accordion-title">¿Qué pasa si mi cliente pierde el celular?</span>
+                            <span class="accordion-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Sus recompensas están atadas a su cuenta segura mediante su correo electrónico. Solo necesita iniciar sesión en otro dispositivo y ahí estarán intactas todas sus tarjetas y puntos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta section-padding">
+            <div class="container text-center cta-box glass-panel fade-in-up">
+                <h2>El futuro de las recompensas locales ya está aquí. <span class="text-accent">¿Te unes?</span></h2>
+                <a href="#" class="btn btn-primary btn-large glow-effect mt-4">Empieza y Registra tu Negocio Ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="var(--accent-color)"/>
+                            <path d="M9 12l2 2 4-4" stroke="#1C2E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Fidely</span>
+                    </div>
+                    <p>La plataforma definitiva que conecta negocios y clientes mediante recompensas digitales.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Empresa</h4>
+                    <a href="#">Acerca de Fidely</a>
+                    <a href="#">Planes y Precios</a>
+                    <a href="#">Noticias</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Soporte</h4>
+                    <a href="#">Centro de Ayuda</a>
+                    <a href="#">Contacto</a>
+                    <a href="#">Comunidad</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Privacidad</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fidely. Todos los derechos reservados.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
