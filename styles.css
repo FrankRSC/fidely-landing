@@ -242,8 +242,16 @@ p { color: var(--text-muted); }
     color: var(--text-main);
     text-decoration: none;
 }
-[data-theme="dark"] .logo-icon path[stroke] {
-    stroke: #EFF2F7;
+.logo-img {
+    width: 32px;
+    height: 32px;
+    transition: var(--transition);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(184, 115, 51, 0.3));
 }
 
 .nav-links {

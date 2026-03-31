@@ -1,0 +1,14 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Minimalist Card Base -->
+  <rect x="4" y="6" width="32" height="28" rx="6" fill="#0D7377" fill-opacity="0.1" stroke="#0D7377" stroke-width="2.5"/>
+  
+  <!-- Reward Star Icon -->
+  <path d="M20 12L22.5 17.5L28.5 18.5L24 22.5L25.5 28.5L20 25.5L14.5 28.5L16 22.5L11.5 18.5L17.5 17.5L20 12Z" 
+        fill="#0D7377" 
+        stroke="#0D7377" 
+        stroke-width="1" 
+        stroke-linejoin="round"/>
+        
+  <!-- Subtle Card line -->
+  <line x1="8" y1="12" x2="14" y2="12" stroke="#0D7377" stroke-width="2" stroke-linecap="round"/>
+</svg>
