@@ -245,13 +245,14 @@ p { color: var(--text-muted); }
 .logo-img {
     width: 32px;
     height: 32px;
+    border-radius: 8px; /* Redondeado para el estilo del nuevo logo */
     transition: var(--transition);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra para que resalte */
 }
 
 .logo:hover .logo-img {
-    transform: scale(1.1) rotate(5deg);
-    filter: drop-shadow(0 4px 8px rgba(184, 115, 51, 0.3));
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 6px 15px rgba(184, 115, 51, 0.4); /* Resplandor color bronce al hacer hover */
 }
 
 .nav-links {
