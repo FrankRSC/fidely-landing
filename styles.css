@@ -2,21 +2,21 @@
    VARIABLES & THEME CONFIGURATION
    ========================================= */
 :root {
-    /* Colors - Light Mode (Default) */
-    --primary-color: #1C2E4A; /* Deep Royal Indigo */
-    --primary-light: rgba(28, 46, 74, 0.1);
-    --secondary-color: #64748B; /* Cool Slate */
-    --secondary-light: rgba(100, 116, 139, 0.1);
-    --accent-color: #D4AF37; /* Champagne Gold */
-    --accent-light: rgba(212, 175, 55, 0.1);
-    --dark-light: rgba(15, 20, 25, 0.1);
+    /* Colors - Light Mode (Default) - Based on app_colors.dart */
+    --primary-color: #0D7377; /* Deep Teal - Success/Accion */
+    --primary-light: rgba(13, 115, 119, 0.1);
+    --secondary-color: #3E4C59; /* Neutral 700 - Functional */
+    --secondary-light: rgba(62, 76, 89, 0.1);
+    --accent-color: #B87333; /* Copper/Bronze - Redemption */
+    --accent-light: rgba(184, 115, 51, 0.1);
+    --dark-light: rgba(31, 41, 51, 0.1);
     
-    --bg-color: #EFF2F7;
+    --bg-color: #F5F7FA; /* neutral 100 */
     --card-bg: #FFFFFF;
-    --text-main: #0F1419;
-    --text-muted: #64748B;
-    --border-color: rgba(100, 116, 139, 0.2);
-    --glass-bg: rgba(255, 255, 255, 0.7);
+    --text-main: #1F2933; /* neutral 900 */
+    --text-muted: #7B8794; /* neutral 500 */
+    --border-color: #E4E7EB; /* neutral 200 */
+    --glass-bg: rgba(255, 255, 255, 0.8);
     --glass-border: rgba(255, 255, 255, 0.5);
     
     /* Typography */
@@ -31,8 +31,8 @@
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-    --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.4);
+    --shadow-glass: 0 8px 32px 0 rgba(13, 115, 119, 0.07);
+    --shadow-glow: 0 0 20px rgba(184, 115, 51, 0.4);
     
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -40,16 +40,16 @@
 
 /* Dark Mode Configuration */
 [data-theme="dark"] {
-    --bg-color: #0F1419;
-    --card-bg: #1A2027;
-    --text-main: #EFF2F7;
-    --text-muted: #94A3B8;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --glass-bg: rgba(26, 32, 39, 0.7);
+    --bg-color: #1F2933; /* neutral 900 */
+    --card-bg: #3E4C59; /* neutral 700 */
+    --text-main: #F5F7FA; /* neutral 100 */
+    --text-muted: #9AA5B1; /* neutral 400 */
+    --border-color: rgba(228, 231, 235, 0.1);
+    --glass-bg: rgba(62, 76, 89, 0.7);
     --glass-border: rgba(255, 255, 255, 0.05);
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -145,7 +145,7 @@ body {
     color: #fff;
 }
 .btn-primary:hover {
-    background-color: #121e33;
+    background-color: #0A5A5D;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -308,7 +308,7 @@ p { color: var(--text-muted); }
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(28, 46, 74, 0) 70%);
+    background: radial-gradient(circle, rgba(184, 115, 51, 0.15) 0%, rgba(13, 115, 119, 0) 70%);
     z-index: -1;
     border-radius: 50%;
 }
@@ -425,12 +425,12 @@ p { color: var(--text-muted); }
 .scan-text { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: auto;}
 
 .loyalty-card {
-    background: linear-gradient(135deg, var(--primary-color), #2A4365);
+    background: linear-gradient(135deg, #2C3E50, #4CA1AF);
     padding: 20px; border-radius: 12px;
     color: white; margin-bottom: 15px;
     box-shadow: var(--shadow-sm);
 }
-.loyalty-card.card-2 { background: linear-gradient(135deg, var(--secondary-color), #475569); }
+.loyalty-card.card-2 { background: linear-gradient(135deg, #141E30, #243B55); }
 .loyalty-card .card-title { font-weight: 600; display: block; margin-bottom: 10px; font-size: 0.9rem;}
 .loyalty-card .points { font-size: 1.2rem; font-weight: 700; color: var(--accent-color); }
 
