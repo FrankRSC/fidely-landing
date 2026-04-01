@@ -245,9 +245,14 @@ p { color: var(--text-muted); }
 .logo-img {
     width: 32px;
     height: 32px;
-    border-radius: 8px; /* Redondeado para el estilo del nuevo logo */
+    border-radius: 8px;
     transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra para que resalte */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+[data-theme="dark"] .logo-img {
+    filter: brightness(0) invert(1);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
 }
 
 .logo:hover .logo-img {
