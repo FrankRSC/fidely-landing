@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Únete a Fidely</title>
+  <style>
+    :root { --primary: #6366f1; --bg: #0f172a; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: white; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    .container { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); padding: 40px; border-radius: 24px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+    .logo { width: 80px; height: 80px; border-radius: 20px; margin-bottom: 20px; object-fit: cover; background: #eee; }
+    h1 { font-size: 24px; margin-bottom: 8px; font-weight: 700; }
+    p { color: #94a3b8; margin-bottom: 30px; font-size: 15px; }
+    .welcome-back { display: none; background: rgba(99, 102, 241, 0.1); padding: 12px; border-radius: 12px; margin-bottom: 20px; color: #a5b4fc; font-size: 14px; border: 1px solid rgba(99, 102, 241, 0.2); }
+    .form-group { text-align: left; margin-bottom: 20px; }
+    label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 8px; color: #cbd5e1; }
+    input { width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid #334155; background: #1e293b; color: white; font-size: 16px; box-sizing: border-box; transition: border-color 0.2s; }
+    input:focus { outline: none; border-color: var(--primary); }
+    button { width: 100%; padding: 14px; border-radius: 12px; border: none; background: var(--primary); color: white; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.1s, background 0.2s; margin-top: 10px; }
+    button:active { transform: scale(0.98); }
+    button:hover { background: #4f46e5; }
+    .footer { margin-top: 25px; font-size: 12px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logotipo dinámico del negocio -->
+    <img id="business-logo" src="https://avatars.githubusercontent.com/u/12845625?v=4" class="logo" alt="Logo">
+    <h1 id="business-name">¡Hola! 👋</h1>
+    <p>Regístrate para obtener tu tarjeta de fidelidad</p>
+    
+    <div id="welcome-msg" class="welcome-back">¡Nos alegra verte de nuevo! Tus datos se han completado automáticamente.</div>
+
+    <form id="join-form">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Ej: Juan" required>
+      </div>
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Ej: Pérez" required>
+      </div>
+      <div class="form-group">
+        <label>Correo Electrónico</label>
+        <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+      </div>
+      <button type="submit">Obtener mi tarjeta</button>
+    </form>
+    
+    <div class="footer">
+      Impulsado por <strong>Fidely</strong>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = 'http://localhost:3000';
+    const DEFAULT_LOGO = 'https://avatars.githubusercontent.com/u/12845625?v=4';
+
+    // Recuperar datos de localStorage si existen e interceptar businessId
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const businessId = urlParams.get('businessId');
+
+      // 1. Cargar Logo y Nombre do Negocio Dinámicamente
+      if (businessId) {
+        try {
+          const response = await fetch(`${API_BASE}/businesses/${businessId}`);
+          if (response.ok) {
+            const business = await response.json();
+            if (business.logo_url) document.getElementById('business-logo').src = business.logo_url;
+            if (business.name) {
+              document.getElementById('business-name').innerText = `¡Bienvenido a ${business.name}! 👋`;
+              document.title = `Únete a ${business.name} | Fidely`;
+            }
+          } else {
+            // Fallback al logo de Fidely
+            document.getElementById('business-logo').src = DEFAULT_LOGO;
+          }
+        } catch (error) {
+          console.error("Error al cargar info del negocio:", error);
+          document.getElementById('business-logo').src = DEFAULT_LOGO;
+        }
+      }
+
+      // 2. Pre-completar formulario desde localStorage
+      const savedData = localStorage.getItem('fidely_user_data');
+      if (savedData) {
+        const data = JSON.parse(savedData);
+        document.getElementById('firstName').value = data.firstName || '';
+        document.getElementById('lastName').value = data.lastName || '';
+        document.getElementById('email').value = data.email || '';
+        document.getElementById('welcome-msg').style.display = 'block';
+      }
+    });
+
+    // Manejar el envío
+    document.getElementById('join-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      const businessId = urlParams.get('businessId');
+
+      if (!businessId) {
+        alert('Error: No se encontró el identificador del negocio en la URL.');
+        return;
+      }
+
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      
+      const userData = { firstName, lastName, email };
+      
+      // Guardar localmente
+      localStorage.setItem('fidely_user_data', JSON.stringify(userData));
+      
+      // Mostrar estado de carga
+      const btn = e.target.querySelector('button');
+      const originalText = btn.innerText;
+      btn.innerText = 'Procesando...';
+      btn.disabled = true;
+
+      try {
+        const response = await fetch(`${API_BASE}/wallet/join/${businessId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(userData),
+          redirect: 'follow' // Seguir el redireccionamiento del backend
+        });
+
+        if (response.ok) {
+          // El backend redirige a /wallet/add/:cardId
+          // Si fetch siguió el redireccionamiento, response.url será la URL final
+          window.location.href = response.url;
+        } else {
+          throw new Error('Error en el registro');
+        }
+
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un problema con el registro. Inténtalo de nuevo.');
+      } finally {
+        btn.innerText = originalText;
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

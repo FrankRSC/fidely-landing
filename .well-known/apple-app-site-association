@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TU_TEAM_ID.com.example.fidely_app",
+        "paths": [
+          "/join/*"
+        ]
+      }
+    ]
+  }
+}
