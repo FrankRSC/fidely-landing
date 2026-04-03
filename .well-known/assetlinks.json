@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.example.fidely_app",
+      "sha256_cert_fingerprints": [
+        "A4:72:39:25:BF:3D:57:C5:6D:4C:05:7D:0F:D9:21:8C:99:A8:9E:24:F7:88:C3:C7:BA:26:E9:C3:54:DF:E2:DE"
+      ]
+    }
+  }
+]
