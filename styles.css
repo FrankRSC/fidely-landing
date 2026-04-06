@@ -547,6 +547,130 @@ p { color: var(--text-muted); }
 .feature-box h4 { margin-bottom: 12px; font-size: 1.2rem;}
 
 /* =========================================
+   PRICING SECTION
+   ========================================= */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.pricing-card {
+    flex: 1;
+    max-width: 450px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -12px rgba(13, 115, 119, 0.15);
+}
+
+.pricing-card.popular {
+    border: 2px solid var(--primary-color);
+}
+
+.plan-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+[data-theme="dark"] .plan-badge {
+    background: rgba(13, 115, 119, 0.2);
+    color: #4FD1C5;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 15px;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.amount {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.period {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.plan-desc {
+    margin-bottom: 35px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.pricing-features {
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.pricing-features ul {
+    list-style: none;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.pricing-features li .check-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.pricing-footer {
+    text-align: center;
+}
+
+.pricing-footer .btn {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .pricing-card {
+        padding: 40px 25px;
+    }
+    .amount {
+        font-size: 3rem;
+    }
+}
+
+/* =========================================
    TESTIMONIALS
    ========================================= */
 .testimonial-slider {
