@@ -23,6 +23,7 @@
                 <a href="#como-funciona">Cómo Funciona</a>
                 <a href="#caracteristicas">Características</a>
                 <a href="#precios">Precios</a>
+                <a href="#contacto">Contacto</a>
                 <a href="#faq">FAQ</a>
             </nav>
             <div class="nav-actions">
@@ -30,8 +31,7 @@
                     <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                     <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
-                <a href="#" class="btn btn-secondary nav-btn">Iniciar Sesión</a>
-                <a href="#" class="btn btn-primary nav-btn">Empezar</a>
+                <a href="https://app.fidely.shiftly.mx" class="btn btn-secondary nav-btn">Iniciar Sesión</a>
             </div>
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -48,8 +48,8 @@
                     <h1>Fideliza a tus clientes y <span class="text-gradient">haz crecer tu negocio</span>. Todo desde su celular.</h1>
                     <h2>Dile adiós a las tarjetas de cartón. Fidely es la plataforma definitiva que conecta negocios y clientes mediante tarjetas de lealtad digitales. Compatible con Apple Wallet y Google Wallet — ¡Ni siquiera necesitas descargar nuestra app!</h2>
                     <div class="hero-cta">
-                        <a href="#" class="btn btn-primary btn-large glow-effect">Crear mi Programa de Recompensas</a>
-                        <a href="#" class="btn btn-outline btn-large">Explorar Beneficios para Clientes</a>
+                        <a href="#contacto" class="btn btn-primary btn-large glow-effect">Contactar para Registrar</a>
+                        <a href="#beneficios" class="btn btn-outline btn-large">Explorar Beneficios</a>
                     </div>
                 </div>
                 <!-- Mockup visual real de la app -->
@@ -226,7 +226,7 @@
                             </ul>
                         </div>
                         <div class="pricing-footer">
-                            <a href="#" class="btn btn-primary btn-large glow-effect">Suscribirme Ahora</a>
+                            <a href="#contacto" class="btn btn-primary btn-large glow-effect">Contactar para Suscribirme</a>
                         </div>
                     </div>
                 </div>
@@ -271,11 +271,11 @@
                 <div class="accordion">
                     <div class="accordion-item glass-panel">
                         <button class="accordion-header" aria-expanded="false">
-                            <span class="accordion-title">¿Qué necesito para empezar como negocio?</span>
+                            <span class="accordion-title">¿Qué necesito para registrar mi negocio?</span>
                             <span class="accordion-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
                         </button>
                         <div class="accordion-content">
-                            <p>Solo un teléfono inteligente. Te registras, creas tu programa y usas la propia cámara del celular para escanear a tus clientes. No requieres hardware adicional ni tablets costosas.</p>
+                            <p>Solo un teléfono inteligente. Te pones en contacto con nuestro equipo, configuramos tu programa y usas la propia cámara del celular para escanear a tus clientes. No requieres hardware adicional ni tablets costosas.</p>
                         </div>
                     </div>
                     <div class="accordion-item glass-panel">
@@ -309,11 +309,60 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
+        <section class="contact-section section-padding" id="contacto">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-in-up">
+                        <h2 class="section-title">¿Listo para transformar <span class="text-gradient">tu negocio</span>?</h2>
+                        <p>Completa el formulario y nos pondremos en contacto contigo para activar tu programa de lealtad digital en menos de 24 horas.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="icon">📧</span>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>contact@shiftly.mx</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper glass-panel fade-in-up delay-1">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Tu Nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="business">Nombre del Negocio</label>
+                                <input type="text" id="business" name="business" placeholder="Ej. Cafetería Central" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje (Opcional)</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Cuéntanos un poco sobre tu negocio..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large glow-effect w-100">Enviar Solicitud</button>
+                        </form>
+                        <div id="formSuccess" class="form-success-msg" style="display: none;">
+                            <div class="success-icon">✅</div>
+                            <h3>¡Mensaje enviado con éxito!</h3>
+                            <p>Nos pondremos en contacto contigo muy pronto a través de contact@shiftly.mx</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA -->
         <section class="final-cta section-padding">
             <div class="container text-center cta-box glass-panel fade-in-up">
                 <h2>El futuro de las recompensas locales ya está aquí. <span class="text-accent">¿Te unes?</span></h2>
-                <a href="#" class="btn btn-primary btn-large glow-effect mt-4">Empieza y Registra tu Negocio Ahora</a>
+                <a href="#contacto" class="btn btn-primary btn-large glow-effect mt-4">Contactar para Registro Ahora</a>
             </div>
         </section>
     </main>

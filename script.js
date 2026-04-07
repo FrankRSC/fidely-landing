@@ -70,8 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileActions.style.gap = '10px';
             mobileActions.style.marginTop = '15px';
             mobileActions.innerHTML = `
-                <a href="#" class="btn btn-secondary" style="flex:1; text-align:center;">Iniciar Sesión</a>
-                <a href="#" class="btn btn-primary" style="flex:1; text-align:center;">Empezar</a>
+                <a href="https://app.fidely.shiftly.mx" class="btn btn-secondary" style="flex:1; text-align:center;">Iniciar Sesión</a>
             `;
             if(!document.querySelector('.mobile-actions')) {
                 navLinks.appendChild(mobileActions);
@@ -82,6 +81,32 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ma) ma.remove();
         }
     });
+
+    // --- Contact Form Submission ---
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulating form submission
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Enviando...';
+            btn.disabled = true;
+
+            // In a real scenario, you would use fetch() to send the data to a backend or service
+            setTimeout(() => {
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+                
+                // Reset button for consistency, though form is hidden
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+    }
 
     // --- FAQ Accordion ---
     const accordionHeaders = document.querySelectorAll('.accordion-header');
