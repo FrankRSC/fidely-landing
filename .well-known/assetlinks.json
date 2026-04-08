@@ -5,9 +5,9 @@
     ],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.example.fidely_app",
+      "package_name": "com.fidelyshiftly.app",
       "sha256_cert_fingerprints": [
-        "A4:72:39:25:BF:3D:57:C5:6D:4C:05:7D:0F:D9:21:8C:99:A8:9E:24:F7:88:C3:C7:BA:26:E9:C3:54:DF:E2:DE"
+        "67:AD:F2:C8:6B:DE:1C:CA:A0:3A:1B:F1:3C:7B:4F:28:9C:60:3C:75:CA:8A:A2:4C:45:0D:4F:5D:43:65:21:98"
       ]
     }
   }

@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "TU_TEAM_ID.com.example.fidely_app",
+        "appID": "TU_TEAM_ID.com.fidelyshiftly.app",
         "paths": [
           "/join/*"
         ]
