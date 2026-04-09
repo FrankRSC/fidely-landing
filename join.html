@@ -109,7 +109,11 @@
       const lastName = document.getElementById('lastName').value;
       const email = document.getElementById('email').value;
       
-      const userData = { firstName, lastName, email };
+      // Detectar plataforma para ayudar al backend a decidir qué tarjeta generar
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const platform = isIOS ? 'apple' : 'google';
+      
+      const userData = { firstName, lastName, email, platform };
       
       // Guardar localmente
       localStorage.setItem('fidely_user_data', JSON.stringify(userData));
@@ -124,21 +128,27 @@
         const response = await fetch(`${API_BASE}/wallet/join/${businessId}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(userData),
-          redirect: 'follow' // Seguir el redireccionamiento del backend
+          body: JSON.stringify(userData)
         });
 
         if (response.ok) {
-          // El backend redirige a /wallet/add/:cardId
-          // Si fetch siguió el redireccionamiento, response.url será la URL final
-          window.location.href = response.url;
+          const data = await response.json();
+          
+          // La redirección funciona tanto para Google Wallet como para Apple Wallet (.pkpass)
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            console.log('No URL in JSON, following response.url:', response.url);
+            window.location.href = response.url;
+          }
         } else {
-          throw new Error('Error en el registro');
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.error || errorData.message || 'Error en el servidor');
         }
 
       } catch (error) {
-        console.error('Error:', error);
-        alert('Hubo un problema con el registro. Inténtalo de nuevo.');
+        console.error('Error detallado:', error);
+        alert('Hubo un problema con el registro: ' + error.message);
       } finally {
         btn.innerText = originalText;
         btn.disabled = false;
