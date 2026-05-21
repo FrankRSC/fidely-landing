@@ -1,0 +1,24 @@
+name: Deploy Landing to Test (Vercel Preview)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use test vercel.json (Render backend)
+        run: cp vercel.test.json vercel.json
+
+      - name: Deploy to Vercel (Preview)
+        run: |
+          DEPLOY_URL=$(npx vercel . --token=${{ secrets.VERCEL_TOKEN }} --yes 2>&1 | grep -o 'https://[^ ]*\.vercel\.app' | head -1)
+          echo "Deployed to: $DEPLOY_URL"
+          npx vercel alias set "$DEPLOY_URL" fidely-landing-test.vercel.app --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_LANDING_PROJECT_ID }}
