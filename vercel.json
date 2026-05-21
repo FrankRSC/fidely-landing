@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://fidely-backend-production.up.railway.app/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/.well-known/assetlinks.json",
